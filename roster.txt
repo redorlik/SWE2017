@@ -1,4 +1,5 @@
 Anders Lehmann
+<<<<<<< HEAD
 
 
 
@@ -7,3 +8,8 @@ Anders Lehmann
 
 
 Mikkel85
+=======
+Jens True
+Anders Reiche
+Tobias Valbjørn
+>>>>>>> 7ab1f9353c6d6a7832e3a70801a4481c980d6c57

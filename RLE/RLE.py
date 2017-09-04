@@ -1,8 +1,8 @@
 
 
 def encode(mess):
-    if not mess : return ''
-
+    if not mess:
+        return ''
     old = mess[0]
     i = 1
     res = []
@@ -16,4 +16,15 @@ def encode(mess):
             i += 1
     res.append(f'{i}{old}')
 
+    return ''.join(res)
+
+def decode(mess):
+    num = 0
+    res = []
+    for c in mess:
+        if c.isdigit():
+            num = 10*num+int(c)
+        else:
+            res.append(num*c)
+            num = 0
     return ''.join(res)

@@ -9,7 +9,7 @@ def encode(mess):
 
     for c in mess[1:]:
         if c != old:
-            res.append(f'{i}{old}')
+            res.append('{0}{1}'.format(i,old))
             i = 1
             old = c
         else:

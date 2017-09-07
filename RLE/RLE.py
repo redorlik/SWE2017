@@ -1,4 +1,4 @@
-
+# Runlength encoder: onvert 'kkkbbbb' til [(3,'k'),(4,'b')]
 
 def encode(mess):
     if not mess:
@@ -9,14 +9,14 @@ def encode(mess):
 
     for c in mess[1:]:
         if c != old:
-            res.append('{0}{1}'.format(i,old))
+            res.append((i,old))
             i = 1
             old = c
         else:
             i += 1
-    res.append(f'{i}{old}')
+    res.append((i,old))
 
-    return ''.join(res)
+    return res
 
 def decode(mess):
     num = 0

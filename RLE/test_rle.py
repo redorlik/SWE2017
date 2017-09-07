@@ -2,14 +2,14 @@ from RLE import encode,decode
 from pytest import raises
 
 def test_encode():
-    assert encode('kkkkkbbbb') == '5k4b'
+    assert encode('kkkkkbbbb') == [(5,'k'),(4,'b')]
 
 def test_encode_empty():
     assert encode('') == ''
 
 def test_encode_emoji():
-    assert encode('😇') == '1😇'
-    assert encode('😇😇😇😇😇') == '5😇'
+    assert encode('😇') == [(1,'😇')]
+    assert encode('😇😇😇😇😇') == [(5,'😇')]
 
 #def test_exeption():
 #    raises(encode(111),TypeError)

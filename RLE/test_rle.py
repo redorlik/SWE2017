@@ -16,14 +16,12 @@ def test_exeption():
         encode(111)
 
 def test_decode():
-    assert decode('4k') == 'kkkk'
-    assert decode('4k3b') == 'kkkkbbb'
-    assert decode('4😇') == '😇😇😇😇'
-    assert decode('10æ') == 'ææææææææææ'
+    assert decode([(4,'k')]) == 'kkkk'
+    assert decode([(4,'k'),(3,'b')]) == 'kkkkbbb'
+    assert decode([(4,'😇')]) == '😇😇😇😇'
+    assert decode([(10,'æ')]) == 'ææææææææææ'
 
 def test_decode_empty():
-    assert decode('') == ''
-
-def test_decode_error():
-    assert decode('1') == ''
-#    assert decode('4k-----10æ') == ''
+    with raises(ValueError):
+        decode('')
+        decode('1')

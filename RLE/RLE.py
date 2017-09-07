@@ -19,12 +19,5 @@ def encode(mess):
     return res
 
 def decode(mess):
-    num = 0
-    res = []
-    for c in mess:
-        if c.isdigit():
-            num = 10*num+int(c)
-        else:
-            res.append(num*c)
-            num = 0
+    res = [i*c for i,c in mess]
     return ''.join(res)
